@@ -7,7 +7,6 @@ This example probably requires Node v7.9.0+
 
   * [phantomjs-prebuilt](https://github.com/Medium/phantomjs)
   * [express](//github.com/expressjs/express)
-  * [body-parser](//github.com/expressjs/body-parser)
   * [http-auth](//github.com/http-auth/http-auth)
   * [dotenv](//github.com/motdotla/dotenv)
   * [slugify](//github.com/simov/slugify)
@@ -25,7 +24,8 @@ npm install
 node server.js
 ```
 
-Once you run the server, you can access it locally using URLs like this (default configuration):
+Once you run the server, you can access it like so (default configuration):
+
 [http://localhost:3000/?url=http://stackoverflow.com&w=1024&h=768](http://localhost:3000/?url=http://stackoverflow.com&w=1024&h=768)
 
 ## Configuration

@@ -3,7 +3,6 @@
 require('dotenv').config();
 
 const express      = require('express');
-const bodyParser   = require('body-parser');
 const slugify      = require('slugify');
 const auth         = require('http-auth');
 const path         = require('path');
@@ -12,9 +11,6 @@ const app          = express();
 const models       = require('./models')({phantomScriptsPath : path.join(__dirname, 'phantom')});
 
 app.set('port', (process.env.PORT || 3000));
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 const authMiddleware = auth.connect(auth.basic({
   realm: 'AUTHENTICATION REQUIRED'

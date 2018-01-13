@@ -9,7 +9,6 @@
   "author": "Kevin Fling",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "http-auth": "^3.2.3",
