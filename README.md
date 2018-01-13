@@ -30,7 +30,9 @@ Once you run the server, you can access it like so (default configuration):
 
 ## Configuration
 
-  This project uses [dotenv](//github.com/motdotla/dotenv). See the `.env` file in the root of the project.
+  This project uses [dotenv](//github.com/motdotla/dotenv). Drop a file called `.env` file in the root of the project.
+
+  The following configuration options are supported:
 
  ```bash
 PORT=3000

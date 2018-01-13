@@ -12,13 +12,15 @@ const models       = require('./models')({phantomScriptsPath : path.join(__dirna
 
 app.set('port', (process.env.PORT || 3000));
 
-const authMiddleware = auth.connect(auth.basic({
-  realm: 'AUTHENTICATION REQUIRED'
-}, (username, password, cb) => {
-  cb(username === process.env.USERNAME && password === process.env.PASSWORD);
-}));
+if(typeof(process.env.USERNAME) === 'string' && typeof(process.env.PASSWORD) === 'string') {
+  app.use(auth.connect(auth.basic({
+    realm: 'AUTHENTICATION REQUIRED'
+  }, (username, password, cb) => {
+    cb(username === process.env.USERNAME && password === process.env.PASSWORD);
+  })));
+}
 
-app.get('/', authMiddleware, (req, res) => {
+app.get('/', (req, res) => {
 
   const url     = req.query.url || 'http://stackoverflow.com';
   const width   = req.query.w   || 1024;
