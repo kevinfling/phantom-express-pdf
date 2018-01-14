@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   const height  = req.query.h   || 768;
   const outFile = models.phantom.slugify(url) + '-' + Math.floor(Date.now() / 1000) + '.pdf';
 
-  models.phantom.convert(url, width, height, (tmpPath) => {    
+  models.phantom.html2pdf(url, width, height, (tmpPath) => {    
     fs.readFile(tmpPath, (err, data) => {
       if (err) throw err;
       res.set('Content-Disposition', 'attachment;filename=' + outFile);

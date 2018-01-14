@@ -8,7 +8,7 @@ const phantomjs    = require('phantomjs-prebuilt');
 const phantom = function(config) {
 
   // Public
-  this.convert = function(url, pageWidth, pageHeight, cb) {
+  this.html2pdf = function(url, pageWidth, pageHeight, cb) {
     var tmpObj = tmp.fileSync({ prefix: 'phantom-', postfix: '.pdf' });
 
     const childArgs = [
