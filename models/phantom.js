@@ -5,7 +5,7 @@ const path         = require('path');
 const childProcess = require('child_process');
 const phantomjs    = require('phantomjs-prebuilt');
 
-const html2pdf = function(config) {
+const phantom = function(config) {
 
   // Public
   this.convert = function(url, pageWidth, pageHeight, cb) {
@@ -24,8 +24,17 @@ const html2pdf = function(config) {
       cb(tmpObj.name);
     });
   }
+
+  this.slugify = function(text) {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')      // Replace spaces with -
+      .replace(/[^\w\-]+/g, '-') // Replace all non-word chars with -
+      .replace(/\-\-+/g, '-')    // Replace multiple - with single -
+      .replace(/^-+/, '')        // Trim - from start of text
+      .replace(/-+$/, '');       // Trim - from end of text
+  }
 }
 
 module.exports = function(config) {
-  return new html2pdf(config);
+  return new phantom(config);
 }

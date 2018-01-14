@@ -9,7 +9,6 @@ This example probably requires Node v7.9.0+
   * [express](//github.com/expressjs/express)
   * [http-auth](//github.com/http-auth/http-auth)
   * [dotenv](//github.com/motdotla/dotenv)
-  * [slugify](//github.com/simov/slugify)
   * [tmp](//github.com/raszi/node-tmp)
 
 ## Installation and Usage
