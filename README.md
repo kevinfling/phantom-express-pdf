@@ -1,4 +1,4 @@
-PhantomJS + Express PDF Generation Test
+PhantomJS + Express PDF Generation Microservice
 ========
 
 This example probably requires Node v7.9.0+
